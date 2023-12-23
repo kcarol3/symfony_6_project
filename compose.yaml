@@ -10,6 +10,7 @@ services:
 ###> doctrine/doctrine-bundle ###
   database:
     image: mysql:latest
+    command: --init-file /data/application/init.sql
     ports:
       - '3306:3306'
     environment:
@@ -19,7 +20,8 @@ services:
       MYSQL_PASSWORD: 'password'
       MYSQL_USER: 'user'
     volumes:
-      - database_data:/var/lib/mysql
+      - ./init.sql:/data/application/init.sql
+      - ./database_data:/var/lib/mysql
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
