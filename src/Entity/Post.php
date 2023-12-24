@@ -15,10 +15,10 @@ class Post
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $content = null;
+    private ?string $body = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $createdDate = null;
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
 
     #[ORM\ManyToOne(inversedBy: 'posts')]
     #[ORM\JoinColumn(nullable: false)]
@@ -29,29 +29,6 @@ class Post
         return $this->id;
     }
 
-    public function getContent(): ?string
-    {
-        return $this->content;
-    }
-
-    public function setContent(string $content): static
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    public function getCreatedDate(): ?\DateTimeInterface
-    {
-        return $this->createdDate;
-    }
-
-    public function setCreatedDate(\DateTimeInterface $createdDate): static
-    {
-        $this->createdDate = $createdDate;
-
-        return $this;
-    }
 
     public function getAuthor(): ?user
     {
@@ -63,5 +40,25 @@ class Post
         $this->author = $author;
 
         return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): void
+    {
+        $this->title = $title;
+    }
+
+    public function getBody(): ?string
+    {
+        return $this->body;
+    }
+
+    public function setBody(?string $body): void
+    {
+        $this->body = $body;
     }
 }
