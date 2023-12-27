@@ -12,13 +12,9 @@ services:
     image: mysql:latest
     command: --init-file /data/application/init.sql
     ports:
-      - '3306:3306'
+      - 3306:3306
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_ROOT_PASSWORD: 'password'
-      # You should definitely change the password in production
-      MYSQL_PASSWORD: 'password'
-      MYSQL_USER: 'user'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
       - ./init.sql:/data/application/init.sql
       - ./database_data:/var/lib/mysql
@@ -30,3 +26,4 @@ volumes:
 ###> doctrine/doctrine-bundle ###
   database_data:
 ###< doctrine/doctrine-bundle ###
+
