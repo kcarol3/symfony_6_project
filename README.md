@@ -18,7 +18,7 @@
 
 4. **Uruchom serwer Symfony na porcie 8000:**
     ```bash
-    php bin/console server:run
+    php bin/console server:start --port=8000
     ```
 
 5. **Wykonaj migracje do bazy danych:**
@@ -26,12 +26,12 @@
     php bin/console doctrine:migration:migrate
     ```
 
-    *Funkcjonalności:*
+    ##Funkcjonalności:
 
 >**Dodanie postów do bazy poleceniem konsolowym:**
 <br/><br/>
 ```bash
-php bin/console app:create-posts.
+php bin/console app:create-posts
 ```
 <br/><br/>
 ![Opis obrazu](https://github.com/kcarol3/symfony_6_project/blob/master/screen4.png)
