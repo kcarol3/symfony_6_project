@@ -62,6 +62,8 @@ class CreatePostsCommand extends Command
                 $fullNameArray = explode(' ', $user['name']);
                 $newUser->setName($fullNameArray[0]);
                 $newUser->setSurname($fullNameArray[1]);
+                $newUser->setPassword('password');
+                $newUser->setEmail('email@gmail.com');
 
                 $this->em->persist($newUser);
                 $this->em->flush();
