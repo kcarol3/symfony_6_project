@@ -59,11 +59,17 @@ class CreatePostsCommand extends Command
         foreach ($users as  $user){
             if($this->em->getRepository(User::class)->find($user['id']) == null){
                 $newUser = new User();
+                $newUser->setId($user["id"]);
                 $fullNameArray = explode(' ', $user['name']);
-                $newUser->setName($fullNameArray[0]);
-                $newUser->setSurname($fullNameArray[1]);
+                if($fullNameArray[0] == ".Mrs"){
+                    $newUser->setName($fullNameArray[1]);
+                    $newUser->setSurname($fullNameArray[2]);
+                } else{
+                    $newUser->setName($fullNameArray[0]);
+                    $newUser->setSurname($fullNameArray[1]);
+                }
                 $newUser->setPassword('password');
-                $newUser->setEmail('email@gmail.com');
+                $newUser->setEmail($newUser->getName() . '@gmail.com');
 
                 $this->em->persist($newUser);
                 $this->em->flush();

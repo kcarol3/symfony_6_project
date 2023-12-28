@@ -14,10 +14,15 @@ use Symfony\Component\Serializer\Annotation\Groups;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
+    #[ORM\GeneratedValue(strategy: "NONE")]
     #[ORM\Column]
     #[Groups(['post'])]
     private ?int $id = null;
+
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
 
     #[ORM\Column(length: 255)]
     #[Groups(['post'])]
