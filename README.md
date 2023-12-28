@@ -29,19 +29,24 @@
     *Funkcjonalności:*
 
 >**Dodanie postów do bazy poleceniem konsolowym:**
+<br/><br/>
 ```bash
 php bin/console app:create-posts.
 ```
+<br/><br/>
 ![Opis obrazu](https://github.com/kcarol3/symfony_6_project/blob/master/screen4.png)
 
 >**Wyświetlenie wszystkich postów z możliwością usunięcia**
+<br/><br/>
 ![Opis obrazu](https://github.com/kcarol3/symfony_6_project/blob/master/screen1.png)
 
 >**Logowanie do aplikacji:**
+<br/><br/>
 ![Opis obrazu](https://github.com/kcarol3/symfony_6_project/blob/master/screen2.png)
 
 >**Udostępnienie Api do pobrania postów z bazy:**
-![Opis obrazu](https://github.com/kcarol3/symfony_6_project/blob/master/screen3.png) popraw to na plik readme.md
+<br/><br/>
+![Opis obrazu](https://github.com/kcarol3/symfony_6_project/blob/master/screen3.png)
 
 
 
