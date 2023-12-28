@@ -26,7 +26,7 @@
     php bin/console doctrine:migration:migrate
     ```
 
-##Funkcjonalności:
+## Funkcjonalności:
 
 >**Dodanie postów do bazy poleceniem konsolowym:**
 <br/><br/>
