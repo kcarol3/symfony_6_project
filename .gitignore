@@ -162,6 +162,10 @@ fabric.properties
 !bin/console
 !bin/symfony_requirements
 
+# SQL Server files
+*.mdf
+*.ldf
+*.sock
 
 # Assets and user uploads
 /web/bundles/
